@@ -1,0 +1,98 @@
+/* Import Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Import Font Awesome */
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+/* Base CSS for both themes */
+:root {
+  /* Light Theme Defaults */
+  --background-color: #f8f9fa;
+  --text-color: #343a40;
+  --primary-color: #007bff; 
+  --secondary-color: #6c757d;
+  --card-background: #ffffff;
+  --navbar-bg: #ffffff;
+  --navbar-text: #343a40;
+  --link-hover-color: #0056b3;
+  --border-color: #e0e0e0;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --background-color: #2c3e50;
+  --text-color: #ecf0f1;
+  --primary-color: #1abc9c;
+  --secondary-color: #bdc3c7;
+  --card-background: #34495e;
+  --navbar-bg: #2c3e50;
+  --navbar-text: #ecf0f1;
+  --link-hover-color: #16a085;
+  --border-color: #444;
+}
+
+/* Apply variables to common elements */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+.card {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Adjust Bootstrap colors to use our variables where possible */
+.navbar-light .navbar-nav .nav-link {
+  color: var(--navbar-text);
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.router-link-active {
+  color: var(--primary-color);
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-primary:hover {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+}
+.alert-info {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-color: var(--link-hover-color);
+}
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+}
+
+/* Example of form control styling in dark mode */
+.dark-mode .form-control {
+    background-color: #3e526a;
+    color: var(--text-color);
+    border-color: #5a7086;
+}
+.dark-mode .form-label {
+    color: var(--text-color);
+}
+.dark-mode .input-group-text {
+    background-color: #4e637a;
+    color: var(--text-color);
+    border-color: #5a7086;
+}
